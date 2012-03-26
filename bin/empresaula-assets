@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
-gem_dir = File.expand_path(File.dirname(__FILE__), '..')
-system("cd styleguide; bundle install; rails s")
+gem_dir = File.expand_path(File.dirname(__FILE__))
+system("cd #{gem_dir}; cd ..; cd styleguide; bundle install; rails s")
