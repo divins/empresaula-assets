@@ -1,6 +1,11 @@
 require 'rails'
 require 'compass-rails'
 
-class Empresaula::Assets::Railtie < Rails::Engine
-  config.assets.precompile += ['empresaula/*.png', 'empresaula/*.jpg', 'empresaula/*.gif']
+module Empresaula::Assets
+  class Railtie < Rails::Engine
+    initializer "Empresaula::Assets precompile hook" do |app|
+      app.config.assets.precompile += 
+        [/^empresaula\/.*\.(png|jpg|gif)$/]
+    end
+  end
 end
