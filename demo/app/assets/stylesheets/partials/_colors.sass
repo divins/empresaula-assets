@@ -1,0 +1,25 @@
+@mixin color-demo($color)
+  +inline-block
+  background-color: $color
+  margin: 5px
+  padding: 10px
+  color: if(lightness($color) > 50, #000, #fff)
+
+$colors: light-blue dark-blue light-red dark-gray light-green light-gray
+
+#colors
+  padding: 0px
+  margin-left: -5px
+  li
+    &.light-blue
+      +color-demo($light-blue)
+    &.dark-blue
+      +color-demo($dark-blue)
+    &.light-red
+      +color-demo($light-red)
+    &.dark-gray
+      +color-demo($dark-gray)
+    &.light-green
+      +color-demo($light-green)
+    &.light-gray
+      +color-demo($light-gray)
