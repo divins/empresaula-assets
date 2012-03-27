@@ -38,18 +38,19 @@ $form-input-width: 100% - $form-label-width
     color: $dark-gray
     padding-top: 5px
     font-weight: bold
+  input, textarea
+    +box-sizing(border-box)
+    margin: 0px
+    padding: 6px
+    border: 2px solid darken($light-gray, 7%)
+    font-size: 1.1em
+    outline: none
+    &:focus
+      border-color: $light-blue
+    +border-radius(3px)
+    color: $dark-gray
   .input
     input, textarea
-      +box-sizing(border-box)
-      margin: 0px
-      padding: 6px
-      border: 2px solid darken($light-gray, 7%)
-      font-size: 1.1em
-      outline: none
-      &:focus
-        border-color: $light-blue
-      +border-radius(3px)
-      color: $dark-gray
       width: $form-input-width
     &.radio_buttons
       input
