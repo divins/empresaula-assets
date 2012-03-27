@@ -1,11 +1,14 @@
 @import "compass/utilities/general/clearfix"
 @import "compass/css3/box-sizing"
 
+$form-label-width: 30%
+$form-input-width: 100% - $form-label-width
+
 @mixin empresaula-fieldset
   display: block
-  width: 50%
   margin-top: 35px
   legend
+    text-align: left
     width: 500px
     padding-bottom: 25px
     line-height: 36px
@@ -18,9 +21,11 @@
     width: 100%
 
 @mixin empresaula-form
+  text-align: right
   .input
-    margin: 15px 15px
+    text-align: left
     +pie-clearfix
+    margin: 15px 0px
     .hint
       +pie-clearfix
       color: lighten($font-color, 20%)
@@ -29,44 +34,60 @@
   label
     display: block
     float: left
-    width: 44%
+    width: $form-label-width
     color: $dark-gray
     padding-top: 5px
     font-weight: bold
-  input
-    float: left
-    +box-sizing(border-box)
-    margin: 0px
-    padding: 6px
-    border: 2px solid darken($light-gray, 7%)
-    font-size: 1.1em
-    outline: none
-    &:focus
-      border-color: $light-blue
-    +border-radius(3px)
-    color: $dark-gray
-    width: 56%
+  .input
+    input, textarea
+      +box-sizing(border-box)
+      margin: 0px
+      padding: 6px
+      border: 2px solid darken($light-gray, 7%)
+      font-size: 1.1em
+      outline: none
+      &:focus
+        border-color: $light-blue
+      +border-radius(3px)
+      color: $dark-gray
+      width: $form-input-width
+    &.radio_buttons
+      input
+        width: auto
+        display: inline
+      .radio
+        margin-right: 20px
+        input
+          margin-right: 3px
+        label
+          float: none
+          display: inline
+    &.boolean
+      margin-left: $form-label-width
+      label, input
+        display: inline
+        float: none
+        width: auto
+
   .field_with_errors
-    input
-      border: 2px solid $light-red
+    input, textarea
+      &, &:focus
+        border-color: $light-red
     span.error
       display: block
       clear: both
-      color: red
+      color: $light-red
       font-style: italic
-  label.checkbox
-    width: auto
-    input
-      margin: 5px 10px 0px 0px
+      margin-left: $form-label-width
   fieldset
     +empresaula-fieldset
+
+  .hint
+    margin-left: $form-label-width
 
   input[type=checkbox]
     width: auto
 
   *[type=submit]
     +big-button($light-green)
-    float: none
     font-size: 1em
-    font-weight: bold
-    width: auto

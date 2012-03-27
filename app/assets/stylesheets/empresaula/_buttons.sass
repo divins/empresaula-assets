@@ -10,6 +10,8 @@
   background: $color
   cursor: pointer
 
+  font-weight: bold
+
   @if lightness($color) > 50
     +single-text-shadow(lighten($color, 20%), 0px, 1px, 0px)
     color: $font-color
