@@ -1,0 +1,26 @@
+@mixin big-button($color: $dark-gray)
+
+  display: inline-block
+  text-decoration: none
+  padding: 8px 20px
+  background: $color
+  cursor: pointer
+
+  @if lightness($color) > 50
+    +single-text-shadow(lighten($color, 20%), 0px, 1px, 0px)
+    color: $font-color
+  @else
+    +single-text-shadow(darken($color, 30%), 0px, -1px, 0px)
+    color: #fff
+
+  +border-radius(3px)
+
+  border: 1px solid transparent
+    top: 1px solid lighten($color, 15%)
+    bottom: 1px solid darken($color, 10%)
+  &:hover
+    background: lighten($color, 5%)
+  &:active
+    border: 1px solid darken($color, 15%)
+    +single-box-shadow(rgba(0,0,0,0.3), 0px, 0px, 5px, 0px, inset)
+  margin-right: 15px
