@@ -1,5 +1,6 @@
 require 'rails'
 require 'compass-rails'
+require 'jquery-rails'
 
 module Empresaula::Assets
   class Railtie < Rails::Engine

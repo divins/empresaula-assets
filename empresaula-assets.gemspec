@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   # s.add_development_dependency "rspec"
   s.add_runtime_dependency "railties"
   s.add_runtime_dependency "compass-rails"
+  s.add_runtime_dependency "jquery-rails"
 
   s.add_development_dependency 'rails'
 end
