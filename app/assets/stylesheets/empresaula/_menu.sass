@@ -1,0 +1,33 @@
+@import "compass/utilities/general/clearfix"
+@import "compass/typography/lists/horizontal-list"
+@import "compass/css3/transition"
+
+@mixin menu
+  background-color: $light-gray
+  +pie-clearfix
+  +horizontal-list(3px)
+
+  a
+    display: block
+    text-decoration: none
+    font-weight: normal
+    +single-text-shadow(lighten($light-gray, 20%), 0px, 1px, 0px)
+    line-height: 55px
+    height: 50px
+    border-bottom: 5px solid transparent
+    color: $font-color
+    padding: 0px 10px
+    +single-transition(border-color, 0.6s)
+    font-size: 1.1em
+
+  li.selected a, a.selected
+    color: $light-red
+
+  a:hover, li.selected a, a.selected
+    border-color: $light-red
+    +single-text-shadow(lighten($light-red, 50%), 0px, 1px, 0px)
+    +single-transition(border-color, 0.4s)
+
+  a:active
+    padding-top: 1px
+    height: 49px
