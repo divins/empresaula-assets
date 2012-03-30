@@ -1,0 +1,24 @@
+@import compass/css3/text-shadow
+@import empresaula/buttons
+
+$blueprint-table-header-color: $light-red
+$blueprint-table-stripe-color: lighten($light-gray, 5%)
+
+@mixin empresaula-table
+  @extend .striped
+  thead
+    th
+      font-weight: bold
+      color: #fff
+      $shadow-color: darken($blueprint-table-header-color, 25%)
+      +single-text-shadow($shadow-color, 0px, -1px, 0px)
+  td, th
+    padding: 5px 10px
+  tbody
+    background-color: #fff
+    td.options
+      white-space: nowrap
+      a
+        +button
+        &.delete
+          +button($light-red)

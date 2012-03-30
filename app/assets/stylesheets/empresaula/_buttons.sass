@@ -1,25 +1,29 @@
-@import "compass/css3/border-radius"
-@import "compass/css3/box-shadow"
-@import "compass/css3/text-shadow"
+@import compass/css3/border-radius
+@import compass/css3/box-shadow
+@import compass/css3/text-shadow
+@import compass/css3/images
 
-@mixin big-button($color: $dark-gray)
+$default-button-color: darken($light-gray, 2%)
 
+@mixin button($color: $default-button-color)
   display: inline-block
   text-decoration: none
-  padding: 8px 20px
   background: $color
+
+  $top-color: lighten($color, 2%)
+  $bottom-color: darken($color, 2%)
+  +background-image(linear-gradient(top, $top-color, $bottom-color))
   cursor: pointer
 
-  font-weight: bold
+  padding: 2px 6px
 
-  @if lightness($color) > 50
+  @if saturation($color) < 60
     +single-text-shadow(lighten($color, 20%), 0px, 1px, 0px)
     color: $font-color
   @else
     +single-text-shadow(darken($color, 30%), 0px, -1px, 0px)
     color: #fff
 
-  text-transform: uppercase
 
   +border-radius(3px)
 
@@ -27,8 +31,24 @@
     top: 1px solid lighten($color, 15%)
     bottom: 1px solid darken($color, 10%)
   &:hover
-    background: lighten($color, 5%)
+    $hover-color: lighten($color, 5%)
+    background: $hover-color
+    $top-color: lighten($hover-color, 2%)
+    $bottom-color: darken($hover-color, 2%)
+    +background-image(linear-gradient(top, $top-color, $bottom-color))
   &:active
+    $active-color: $color
+    background: $active-color
+    $top-color: lighten($active-color, 2%)
+    $bottom-color: darken($active-color, 2%)
+    +background-image(linear-gradient(top, $top-color, $bottom-color))
     border: 1px solid darken($color, 15%)
-    +single-box-shadow(rgba(0,0,0,0.3), 0px, 0px, 5px, 0px, inset)
-  margin-right: 15px
+    +single-box-shadow(rgba(0,0,0,0.2), 0px, 1px, 3px, 0px, inset)
+
+  margin: 3px
+  font-weight: bold
+
+@mixin big-button($color: $default-button-color)
+  +button($color)
+  padding: 8px 20px
+  text-transform: uppercase
