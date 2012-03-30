@@ -1,9 +1,7 @@
 @import "compass/utilities/general/clearfix"
 @import "compass/css3/box-sizing"
 
-@import empresaula/buttons
-
-$form-label-width: 30%
+$form-label-width: 40%
 $form-input-width: 100% - $form-label-width
 
 @mixin empresaula-fieldset
@@ -24,15 +22,7 @@ $form-input-width: 100% - $form-label-width
 
 @mixin empresaula-form
   text-align: right
-  .input
-    text-align: left
-    +pie-clearfix
-    margin: 15px 0px
-    .hint
-      +pie-clearfix
-      color: lighten($font-color, 20%)
-      float: left
-      padding-top: 3px
+
   label
     display: block
     float: left
@@ -40,6 +30,7 @@ $form-input-width: 100% - $form-label-width
     color: $dark-gray
     padding-top: 5px
     font-weight: bold
+
   input, textarea
     +box-sizing(border-box)
     margin: 0px
@@ -51,7 +42,11 @@ $form-input-width: 100% - $form-label-width
       border-color: $light-blue
     +border-radius(3px)
     color: $dark-gray
+
   .input
+    text-align: left
+    +pie-clearfix
+    margin: 15px 0px
     input, textarea
       width: $form-input-width
     &.radio_buttons
@@ -65,6 +60,7 @@ $form-input-width: 100% - $form-label-width
         label
           float: none
           display: inline
+
     &.boolean
       margin-left: $form-label-width
       label, input
@@ -82,11 +78,16 @@ $form-input-width: 100% - $form-label-width
       color: $light-red
       font-style: italic
       margin-left: $form-label-width
+
   fieldset
     +empresaula-fieldset
 
   .hint
     margin-left: $form-label-width
+    +pie-clearfix
+    color: lighten($font-color, 20%)
+    float: left
+    padding-top: 3px
 
   input[type=checkbox]
     width: auto
