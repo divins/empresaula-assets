@@ -5,10 +5,16 @@
 @mixin menu
   background-color: $light-gray
   +pie-clearfix
-  +horizontal-list(3px)
+  text-align: left
+  padding: 0px
+  margin: 0px
+
+  li
+    float: left
 
   a
-    display: block
+    margin-right: 5px
+    float: left
     text-decoration: none
     font-weight: normal
     +single-text-shadow(lighten($light-gray, 20%), 0px, 1px, 0px)
