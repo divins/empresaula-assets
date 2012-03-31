@@ -6,7 +6,7 @@
 $default-button-color: darken($light-gray, 2%)
 
 @mixin button($color: $default-button-color)
-  display: inline-block
+  +inline-block
   text-decoration: none
   background: $color
 
@@ -42,7 +42,7 @@ $default-button-color: darken($light-gray, 2%)
     $top-color: lighten($active-color, 2%)
     $bottom-color: darken($active-color, 2%)
     +background-image(linear-gradient(top, $top-color, $bottom-color))
-    border: 1px solid darken($color, 15%)
+    border: 1px solid darken($color, 10%)
     +single-box-shadow(rgba(0,0,0,0.2), 0px, 1px, 3px, 0px, inset)
 
   margin: 3px
