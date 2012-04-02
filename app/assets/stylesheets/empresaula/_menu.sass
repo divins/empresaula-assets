@@ -3,28 +3,32 @@
 @import compass/css3/transition
 
 @mixin menu
-  background-color: $light-gray
+  background-color: $gray
   +pie-clearfix
   text-align: left
-  padding: 0px
-  margin: 0px
+  &, ul
+    padding: 0px
+    margin: 0px
 
   li
+    margin: 0px
+    padding: 0px
+    list-style-type: none
     float: left
 
   a
-    margin-right: 5px
+    margin-right: 10px
     float: left
     text-decoration: none
     font-weight: normal
-    +single-text-shadow(lighten($light-gray, 20%), 0px, 1px, 0px)
-    line-height: 55px
-    height: 50px
+    +single-text-shadow(lighten($gray, 20%), 0px, 1px, 0px)
+    line-height: 50px
+    height: 45px
     border-bottom: 5px solid transparent
     color: $font-color
-    padding: 0px 10px
+    padding: 0px 15px
     +single-transition(border-color, 0.6s)
-    font-size: 1.1em
+    font-size: 1.2em
 
   li.selected a, a.selected
     color: $light-red
@@ -36,4 +40,4 @@
 
   a:active
     padding-top: 1px
-    height: 49px
+    height: 44px
