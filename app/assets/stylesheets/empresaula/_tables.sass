@@ -27,5 +27,5 @@ $blueprint-table-stripe-color: lighten($gray, 5%)
       white-space: nowrap
       a
         +button
-        &.delete
+        &.delete, &[data-method='delete']
           +button($light-red)
