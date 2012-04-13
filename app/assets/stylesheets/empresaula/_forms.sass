@@ -50,16 +50,16 @@ $form-input-width: 100% - $form-label-width
     input, textarea
       width: $form-input-width
     &.radio_buttons
+      position: relative
       input
         width: auto
-        display: inline
-      .radio
-        margin-right: 20px
-        input
-          margin-right: 3px
-        label
-          float: none
-          display: inline
+        margin-right: 5px
+      label.radio
+        margin-left: $form-label-width
+      label.control-label
+        position: absolute
+        top: 0px
+        left: 0px
 
     &.boolean
       margin-left: $form-label-width
