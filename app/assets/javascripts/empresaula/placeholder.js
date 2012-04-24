@@ -1,3 +1,4 @@
+// = require Placeholders.password
 $(function(){
-  $('input[placeholder], textarea[placeholder]').placeholder();
+  Placeholders.init()
 });
