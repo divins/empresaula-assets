@@ -53,19 +53,20 @@ $form-input-width: 100% - $form-label-width
       height: 150px
     &.radio_buttons
       position: relative
-      input
-        width: auto
-        margin-right: 5px
-      label.radio
-        margin-left: $form-label-width
-        width: auto
-        font-weight: normal
-        padding-left: 20px
+      .radio
+        width: $form-input-width
         position: relative
         input
-          position: absolute
-          left: 0px
-          top: 10px
+          +inline-block
+          width: auto
+          margin-right: 5px
+        label
+          +inline-block
+          width: auto
+          font-weight: normal
+          float: none
+          display: inline
+          margin-right: 10px
       label.control-label
         position: absolute
         top: 0px
