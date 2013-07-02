@@ -16,6 +16,8 @@ $default-button-color: darken($gray, 2%)
   +background-image(linear-gradient(top, $top-color, $bottom-color))
   cursor: pointer
 
+  padding: 2px 6px
+
   @if saturation($color) < 60
     +single-text-shadow(lighten($color, 20%), 0px, 1px, 0px)
     color: $font-color
