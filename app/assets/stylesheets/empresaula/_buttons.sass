@@ -6,25 +6,17 @@
 
 $default-button-color: darken($gray, 2%)
 
-@mixin button($color: $default-button-color, $height: 30px)
+@mixin button($color: $default-button-color)
   +inline-block
   text-decoration: none
   background: $color
-
-  -moz-user-select: none
-  -webkit-user-select: none
-  -webkit-user-drag: none
-
-  line-height: $height
 
   $top-color: lighten($color, 2%)
   $bottom-color: darken($color, 2%)
   +background-image(linear-gradient(top, $top-color, $bottom-color))
   cursor: pointer
 
-  $extra-height: $height - 30px
-  $extra-padding: $extra-height * 2 + 6px
-  padding: 0px $extra-padding
+  padding: 2px 6px
 
   @if saturation($color) < 60
     +single-text-shadow(lighten($color, 20%), 0px, 1px, 0px)
@@ -57,6 +49,7 @@ $default-button-color: darken($gray, 2%)
   margin: 3px
   font-weight: bold
 
-@mixin big-button($color: $default-button-color, $height: 40px)
-  +button($color, $height)
+@mixin big-button($color: $default-button-color)
+  +button($color)
   text-transform: uppercase
+  padding: 8px 20px
